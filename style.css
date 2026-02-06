@@ -1,0 +1,1130 @@
+/* ===============================
+   RESET & BASE
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', 'Prompt', Arial, sans-serif;
+  background: linear-gradient(180deg, #eef2f7, #f9fbfd);
+  color: #333;
+  line-height: 1.75;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  /* 🔽 ลดสเกลรวม */
+  font-size: 16px;
+}
+
+/* ===============================
+   HEADER
+================================ */
+header {
+  background: linear-gradient(135deg, #3498db, #2c3e50);
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 2rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+nav ul li {
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  position: relative;
+  padding: 12px 24px;
+  display: inline-block;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 5px;
+  width: 0;
+  height: 2px;
+  background: #f39c12;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+nav a:hover::after {
+  width: 70%;
+}
+
+/* ===============================
+   MAIN
+================================ */
+main {
+  flex-grow: 1;
+  padding: 50px 20px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ===============================
+   SECTION CARD
+================================ */
+.section {
+  background-color: white;
+  margin: 30px auto;
+  padding: 45px;
+  max-width: 1100px;
+  border-radius: 16px;
+  border-left: 8px solid #3498db;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  /* ป้องกันเนื้อหาล้น */
+}
+
+.section:hover {
+  transform: translateY(-3px);
+  border-left-color: #f39c12;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* ===============================
+   TEXT - ปรับให้อ่านง่าย
+================================ */
+h2 {
+  color: #2c3e50;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 1.9rem;
+  line-height: 1.4;
+}
+
+h3 {
+  color: #34495e;
+  margin: 25px 0 20px 0;
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  max-width: 900px;
+  margin: 0 auto 25px auto;
+  text-align: left;
+}
+
+ul {
+  max-width: 900px;
+  margin: 0 auto 25px auto;
+  padding-left: 45px;
+  text-align: left;
+}
+
+ul li {
+  margin-bottom: 15px;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+em {
+  color: #3498db;
+  font-style: italic;
+}
+
+/* ===============================
+   BUTTON - ปรับให้ใช้งานง่าย
+================================ */
+button {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  padding: 18px 40px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: block;
+  width: auto;
+  min-width: 250px;
+  margin: 30px auto;
+  box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #2980b9, #1f5f8b);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(52, 152, 219, 0.4);
+}
+
+button:active {
+  transform: translateY(-1px);
+}
+
+button:focus {
+  outline: 3px solid #f39c12;
+  outline-offset: 3px;
+}
+
+/* ===============================
+   BUBBLE TABS
+================================ */
+.bubble-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.bubble-btn {
+  position: relative;
+  padding: 16px 36px;
+  background: linear-gradient(135deg, #eaf3ff, #ffffff);
+  color: #2c3e50;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.bubble-btn:hover {
+  background: linear-gradient(135deg, #3498db, #5dade2);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(52, 152, 219, 0.4);
+  border-color: #2980b9;
+}
+
+.bubble-btn:active {
+  transform: translateY(-1px);
+}
+
+.bubble-btn:focus {
+  outline: 3px solid #f39c12;
+  outline-offset: 3px;
+}
+
+/* ===============================
+   RESULT BOX
+================================ */
+#result,
+#quiz-result {
+  background: linear-gradient(135deg, #f1f8ff, #e3f2fd);
+  padding: 30px;
+  border-radius: 12px;
+  margin-top: 30px;
+  border: 2px solid #3498db;
+  text-align: center;
+  font-size: 1.1rem;
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.15);
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#result h3,
+#quiz-result h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+}
+
+/* ===============================
+   QUIZ
+================================ */
+.quiz-item {
+  margin-bottom: 40px;
+  background: #fafbfc;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #e1e8ed;
+}
+
+.quiz-item p {
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 1.15rem;
+  color: #2c3e50;
+  text-align: left;
+}
+
+.quiz-item label {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 10px;
+  padding: 18px 24px;
+  margin-bottom: 14px;
+  cursor: pointer;
+  border: 2px solid #e1e8ed;
+  transition: all 0.25s ease;
+  position: relative;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  min-height: 60px;
+}
+
+.quiz-item input[type="radio"] {
+  display: none;
+}
+
+.quiz-item label:hover {
+  transform: translateX(5px);
+  border-color: #3498db;
+  box-shadow: 0 6px 16px rgba(52, 152, 219, 0.15);
+  background: #f8fbff;
+}
+
+.quiz-item label:has(input:checked) {
+  background: linear-gradient(135deg, #3498db, #5dade2);
+  color: white;
+  border-color: #2980b9;
+  box-shadow: 0 8px 24px rgba(52, 152, 219, 0.35);
+  transform: translateX(8px);
+  font-weight: 600;
+}
+
+.quiz-item label:has(input:checked)::before {
+  content: '✓';
+  position: absolute;
+  right: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* ===============================
+   INPUT FIELDS
+================================ */
+input[type="number"],
+input[type="text"] {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 1.1rem;
+  border: 2px solid #e1e8ed;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+label[for] {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 1.05rem;
+}
+
+/* ===============================
+   IMAGES - จัดการรูปภาพ
+================================ */
+
+/* รูปภาพทั่วไป */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 30px auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+  border: 3px solid #f0f4f8;
+}
+
+img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  border-color: #3498db;
+}
+
+/* -------------------------------------
+   [FIX] เฉพาะรูป 1.png (แผนที่)
+   ให้ขนาดพอดีใน PC และทะลุจอในมือถือ
+------------------------------------- */
+img[src="1.png"] {
+  /* ใน PC: ปรับขนาดให้พอดี ไม่ใหญ่คับจอ */
+  max-width: 70%;
+  /* ปรับเปอร์เซ็นต์ได้ตามชอบ (เช่น 600px หรือ 70%) */
+  width: 70%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* รูปภาพใน <ul> */
+ul img {
+  margin-left: -45px;
+  margin-right: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+/* Container รูปภาพซ้อนกัน */
+.section ul:has(img + img),
+.section:has(img + img + img) {
+  position: relative;
+}
+
+.section:has(img + img + img) {
+  display: flex;
+  flex-direction: column;
+}
+
+ul li:has(+ img + img + img),
+section:has(> ul img + img + img) ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img+img+img {
+  margin-top: 15px !important;
+}
+
+img+img {
+  margin-top: 15px !important;
+}
+
+/* จัดการรูป 16, 17, 18 */
+.section ul:has(li img[src="16.png"]) {
+  padding-left: 0;
+  list-style-position: inside;
+}
+
+.section ul:has(li img[src="16.png"]) li {
+  list-style: none;
+}
+
+#quiz img,
+.section>img:not([src="1.png"]) {
+  max-width: 700px;
+  margin: 35px auto;
+  padding: 20px;
+  background: white;
+  border: 2px solid #e1e8ed;
+}
+
+/* Responsive Grid สำหรับ PC */
+@media (min-width: 769px) {
+  img[src="16.png"],
+  img[src="17.png"],
+  img[src="18.png"] {
+    width: 100%;
+    max-width: 420px; /* 🔼 ขยายขึ้น */
+    height: auto;
+  }
+}
+
+
+  .section:has(ul img[src="16.png"]) ul li {
+    padding-left: 20px;
+  }
+
+  .section:has(ul img[src="16.png"]) ul img {
+    margin: 0;
+    width: 100%;
+    grid-column: span 1;
+  }
+
+  img[src="16.png"],
+  img[src="17.png"],
+  img[src="18.png"] {
+    margin: 0 !important;
+  }
+
+/* Caption */
+img[alt]:not([alt=""]) {
+  position: relative;
+}
+
+img[alt]:not([alt=""])::after {
+  content: attr(alt);
+  display: block;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  background: #2c3e50;
+  color: #ecf0f1;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+footer p {
+  margin: 8px 0;
+  color: #ecf0f1;
+}
+
+/* ===============================
+   RESPONSIVE - มือถือ
+================================ */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav a {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+  }
+
+  /* Section Padding บนมือถือคือ 20px */
+  .section {
+    margin: 15px;
+    padding: 25px 20px;
+    /* Note: padding ซ้ายขวา 20px */
+    border-left-width: 5px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  p,
+  ul li {
+    font-size: 1rem;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 16px;
+    min-width: unset;
+  }
+
+  .bubble-btn {
+    width: 100%;
+    text-align: center;
+    padding: 16px;
+  }
+
+  .quiz-item label {
+    padding: 15px 18px;
+    font-size: 1rem;
+  }
+
+  input[type="number"],
+  input[type="text"] {
+    font-size: 1rem;
+    padding: 14px 16px;
+  }
+
+  /* รูปภาพทั่วไปบนมือถือ */
+  img {
+    margin: 20px auto;
+    border-radius: 8px;
+  }
+
+  /* -------------------------------------
+     [FIX] มือถือ: ขยาย 1.png ให้ทะลุจอ
+  ------------------------------------- */
+  img[src="1.png"] {
+    width: calc(100% + 40px) !important;
+    /* 100% + (paddingซ้าย20 + paddingขวา20) */
+    max-width: none !important;
+    margin-left: -20px !important;
+    /* ดึงภาพไปทางซ้ายล้ำ padding */
+    margin-right: -20px !important;
+    /* ดึงภาพไปทางขวาล้ำ padding */
+    border-radius: 0;
+    /* ลบมุมโค้งเพื่อให้ดูเนียนกับขอบจอ */
+    border-left: none;
+    border-right: none;
+  }
+
+  ul img {
+    margin-left: 0;
+  }
+
+  .section:has(ul img[src="16.png"]) ul {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+  }
+
+  .section:has(ul img[src="16.png"]) ul img {
+    width: 100%;
+    margin: 15px 0 !important;
+  }
+
+  a,
+  button,
+  label,
+  input {
+    min-height: 44px;
+  }
+}
+
+/* ===============================
+   PRINT STYLES
+================================ */
+@media print {
+
+  header,
+  footer,
+  nav,
+  button,
+  .bubble-tabs {
+    display: none;
+  }
+
+  .section {
+    box-shadow: none;
+    page-break-inside: avoid;
+    border-left: 3px solid #333;
+  }
+
+  img {
+    max-width: 100%;
+    page-break-inside: avoid;
+    box-shadow: none;
+  }
+}
+/* ===============================
+   [ADD] จัดรูปภาพในข้อสอบ (ข้อ 8)
+================================ */
+.quiz-item img.quiz-img {
+  max-width: 100%;
+  /* ไม่ให้ล้นกรอบ */
+  width: auto;
+  /* ให้สัดส่วนถูกต้อง */
+  max-height: 350px;
+  /* จำกัดความสูงไม่ให้กินที่หน้าจอเกินไป */
+  margin: 10px auto 25px auto;
+  /* จัดกึ่งกลาง และเว้นระยะห่างด้านล่างก่อนถึงตัวเลือก */
+  padding: 10px;
+  /* เพิ่มพื้นที่ว่างรอบรูปนิดหน่อย */
+  background: #fff;
+  /* พื้นหลังขาว */
+  border: 1px solid #e1e8ed;
+  /* เส้นขอบบางๆ ให้ดูสะอาดตา */
+  box-shadow: none;
+  /* ลบเงาหนักๆ ของรูปปกติออก */
+  display: block;
+}
+
+/* ปรับสำหรับมือถือ */
+@media (max-width: 768px) {
+  .quiz-item img.quiz-img {
+    max-height: 250px;
+    /* ลดความสูงลงหน่อยในมือถือ */
+    margin-bottom: 20px;
+  }
+}
+.section::before {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 60px;
+  background: linear-gradient(90deg, #3498db, #f39c12);
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+h2 {
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #3498db;
+  margin: 12px auto 0;
+  border-radius: 999px;
+}
+ul li::marker {
+  color: #3498db;
+  font-weight: bold;
+}
+/* ===============================
+   [FIX] หน่วย 3 : 12.png + 13.png ไม่ให้ล้นจอมือถือ
+================================ */
+@media (max-width: 768px) {
+
+  img[src="12.png"],
+  img[src="13.png"] {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+/* =============================================
+   [FIX] หน่วยที่ 3: จัดการรูปภาพไม่ให้ล้นจอ (Responsive)
+   ============================================= */
+
+/* 1. จัดการรูปภาพทั่วไปในเนื้อหา */
+.section img {
+  max-width: 100%;
+  /* ห้ามกว้างเกินกรอบเนื้อหา */
+  height: auto;
+  /* สัดส่วนภาพไม่เพี้ยน */
+  display: block;
+  margin: 20px auto;
+  /* จัดกึ่งกลาง */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 2. จัดการกรณีมีรูปภาพหลายรูปติดกัน (เช่น 3.1.png และ 3.2.png) */
+.section:has(img + img) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 3. พิเศษ: สำหรับหน้าจอมือถือ (Small Screens) */
+@media (max-width: 768px) {
+  .section {
+    padding: 20px 15px;
+    /* ลด Padding ขอบข้างเพื่อให้มีพื้นที่รูปมากขึ้น */
+  }
+
+  /* บังคับรูปภาพทุกรูปในหน่วยที่ 3 ให้พอดีจอ */
+  img[src^="3."] {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 8px;
+  }
+
+  /* ถ้ามีรูปใน List (ul li) ให้ปรับการจัดวาง */
+  ul img {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+}
+
+/* 4. ปรับแต่งส่วนคลังข้อสอบให้ดูง่ายบนมือถือ */
+.quiz-item label {
+  display: block;
+  /* เปลี่ยนจาก flex เป็น block เพื่อให้ข้อความยาวๆ ไม่ดันกัน */
+  padding: 12px 15px;
+  font-size: 0.95rem;
+}
+
+.quiz-item input[type="radio"] {
+  margin-right: 10px;
+  display: inline-block;
+  /* โชว์ปุ่ม Radio ให้เด็กกดง่ายขึ้น */
+}
+/* ===============================
+   TEAM MEMBERS PAGE (หน้าสมาชิก)
+================================ */
+
+/* จัดกลุ่มการวาง Layout */
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* การ์ดสมาชิกแต่ละคน */
+.member-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #e1e8ed;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.member-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(52, 152, 219, 0.2);
+  border-color: #3498db;
+}
+
+/* ส่วนรูปภาพสมาชิก */
+.member-img {
+  width: 100%;
+  height: 250px;
+  /* กำหนดความสูงมาตรฐาน */
+  overflow: hidden;
+  background: #f8f9fa;
+}
+
+.member-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* ทำให้รูปไม่เบี้ยว แม้ขนาดรูปจริงจะต่างกัน */
+  margin: 0 !important;
+  /* ลบ margin จาก img ปกติ */
+  border-radius: 0 !important;
+  /* ลบมุมโค้งด้านบนออก */
+  border: none !important;
+}
+
+/* ส่วนข้อมูลสมาชิก */
+.member-info {
+  padding: 20px;
+}
+
+.member-info h3 {
+  margin: 10px 0 5px 0;
+  color: #2c3e50;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.member-info p {
+  color: #7f8c8d;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* ป้ายบอกตำแหน่ง (เช่น หัวหน้ากลุ่ม) */
+.role {
+  display: inline-block;
+  background: #eaf3ff;
+  color: #3498db;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ปรับสำหรับมือถือ */
+@media (max-width: 768px) {
+  .team-container {
+    grid-template-columns: 1fr;
+    /* บนมือถือโชว์แถวละ 1 คน */
+    padding: 10px;
+  }
+
+  .member-img {
+    height: 300px;
+    /* เพิ่มความสูงรูปในมือถือให้ดูชัดขึ้น */
+  }
+}
+/* ไฟล์ CSS */
+.adjust-photo {
+  /* 50% แรกคือแนวนอน (ซ้าย-ขวา), 20% หลังคือแนวตั้ง (บน-ล่าง) */
+  /* ถ้าหัวขาด ให้ปรับตัวเลขหลังให้น้อยลง เช่น 10% หรือ 0% เพื่อดันภาพลงมา */
+  object-position: 50% 20% !important;
+}
+/* เพิ่ม cursor pointer ให้การ์ด */
+.member-card {
+  cursor: pointer;
+  position: relative;
+}
+
+.member-card::after {
+  content: "คลิกเพื่อดูรายละเอียด";
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(52, 152, 219, 0.9);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.member-card:hover::after {
+  opacity: 1;
+}
+
+/* =========================================
+   ส่วน Animation การ์ดสมาชิก (วางทับ .member-card เดิม)
+   ========================================= */
+.member-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding-bottom: 20px;
+  cursor: pointer;
+  /* เมาส์เป็นรูปมือ */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  /* เอฟเฟกต์นุ่มนวล */
+}
+
+.member-card:hover {
+  transform: translateY(-10px);
+  /* ลอยขึ้น */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  /* เงาชัดขึ้น */
+}
+
+/* =========================================
+   ส่วน Modal และ Animation (วางทับส่วน Modal เดิมทั้งหมด)
+   ========================================= */
+.modal {
+  display: none;
+  /* ซ่อนเป็นค่าเริ่มต้น */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  /* เบลอฉากหลัง */
+  opacity: 0;
+  /* เริ่มต้นจาง */
+  transition: opacity 0.3s ease;
+  /* เอฟเฟกต์ค่อยๆ ชัด/จาง */
+}
+
+/* Class สำหรับสั่งให้แสดง (JS จะเติม class นี้) */
+.modal.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+}
+
+/* Class สำหรับตอนกำลังจะปิด (JS จะเติม class นี้) */
+.modal.closing {
+  opacity: 0;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+  transform: translateY(50px);
+  /* เริ่มต้นอยู่ต่ำลงมา */
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* เอฟเฟกต์เด้งดึ๋ง */
+}
+
+/* เมื่อ Modal Active ให้ Content เด้งขึ้นมาที่เดิม */
+.modal.active .modal-content {
+  transform: translateY(0);
+}
+
+/* เมื่อ Modal Closing ให้ Content ตกลงไป */
+.modal.closing .modal-content {
+  transform: translateY(50px);
+}
+
+/* --- ส่วน Header ของ Modal --- */
+.modal-header {
+  position: relative;
+  background: linear-gradient(135deg, #3498db, #2c3e50);
+  color: white;
+  padding: 30px;
+  border-radius: 20px 20px 0 0;
+  text-align: center;
+}
+
+/* --- ปุ่มกากบาท (Close Button) --- */
+.close-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 10;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: rotate(90deg) scale(1.1);
+  /* หมุนและขยายใหญ่ */
+  color: #ff6b6b;
+}
+
+/* --- รูปภาพใน Modal --- */
+.modal-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  /* โฟกัสที่ส่วนบน (แก้ปัญหาหัวขาด) */
+  margin: -100px auto 30px auto;
+  display: block;
+  border: 8px solid white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  background-color: white;
+}
+
+/* --- ส่วนเนื้อหาข้อความ --- */
+.modal-body {
+  padding: 40px;
+}
+/* =====================================
+   🌙 DARK MODE
+===================================== */
+
+body.dark {
+  background: linear-gradient(180deg, #020617, #020617);
+  color: #e5e7eb;
+}
+
+/* Header */
+body.dark header {
+  background: linear-gradient(135deg, #020617, #020617);
+}
+
+/* Section */
+body.dark .section {
+  background: #020617;
+  box-shadow: 0 10px 30px rgba(0,0,0,.6);
+}
+
+body.dark .section::before {
+  background: linear-gradient(180deg, #38bdf8, #fbbf24);
+}
+
+/* Text */
+body.dark h1,
+body.dark h2,
+body.dark h3 {
+  color: #f8fafc;
+}
+
+body.dark p,
+body.dark li {
+  color: #cbd5f5;
+}
+
+/* Card / Quiz */
+body.dark .quiz-item {
+  background: #020617;
+  border-color: #334155;
+}
+
+body.dark .quiz-item label {
+  background: #020617;
+  border-color: #334155;
+  color: #e5e7eb;
+}
+
+body.dark .quiz-item label:hover {
+  background: #1e293b;
+}
+
+/* Button */
+body.dark button {
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+}
+
+/* Member card */
+body.dark .member-card {
+  background: #020617;
+}
+
+/* Modal */
+body.dark .modal-content {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+/* Footer */
+body.dark footer {
+  background: #020617;
+}
