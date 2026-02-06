@@ -33,7 +33,7 @@ const members = [
         responsibility: "ทำโครงงานเอกสาร",
     },
     {
-        img: "num33.jpg",
+        img: "num33.jpeg",
         name: "นางสาวเกศกนก กกกระโทก",
         number: "33",
         grade: "ม.6/9",
@@ -41,7 +41,7 @@ const members = [
         responsibility: "ทำโครงงานเอกสาร",
     },
     {
-        img: "num37.jpg",
+        img: "num37.jpeg",
         name: "นางสาวสุภาพร สุขสุมิตร",
         number: "37",
         grade: "ม.6/9",
