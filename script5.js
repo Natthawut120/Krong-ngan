@@ -1,7 +1,7 @@
 // ข้อมูลสมาชิกแต่ละคน
 const members = [
     {
-        img: "n10.jpg",
+        img: "num10.jpeg",
         name: "นาย ธันวา พาพินิจ",
         number: "10",
         grade: "ม.6/9",
@@ -9,7 +9,7 @@ const members = [
         responsibility: "รับผิดชอบการพัฒนาโครงสร้างเว็บไซต์และระบบอินเทอร์เฟซ (HTML/CSS) พร้อมจัดทำเนื้อหาบทเรียนออนไลน์ หน่วยการเรียนรู้ที่ 1-3",
     },
     {
-        img: "m6.jpg",
+        img: "num15.jpeg",
         name: "นาย ณัฐวุฒิ ผมงาม",
         number: "15",
         grade: "ม.6/9",
@@ -17,7 +17,7 @@ const members = [
         responsibility: "รับผิดชอบการออกแบบประสบการณ์ผู้ใช้ (UX/UI) และการนำเข้าข้อมูลบทเรียนหน่วยที่ 1-3 สู่ระบบเว็บไซต์ให้มีความน่าสนใจและถูกต้อง",
     },
     {
-        img: "m5.jpg",
+        img: "num16.jpeg",
         name: "นายสราวุธ แคล้วครบุรี",
         number: "16",
         grade: "ม.6/9",
@@ -25,7 +25,7 @@ const members = [
         responsibility: "ทำโครงงานเอกสาร",
     },
     {
-        img: "m4.jpg",
+        img: "num20.jpeg",
         name: "นางสาวกชพร แฉะกระโทก",
         number: "20",
         grade: "ม.6/9",
@@ -33,7 +33,7 @@ const members = [
         responsibility: "ทำโครงงานเอกสาร",
     },
     {
-        img: "m3.jpg",
+        img: "num33.jpg",
         name: "นางสาวเกศกนก กกกระโทก",
         number: "33",
         grade: "ม.6/9",
@@ -41,7 +41,7 @@ const members = [
         responsibility: "ทำโครงงานเอกสาร",
     },
     {
-        img: "m2.jpg",
+        img: "num37.jpg",
         name: "นางสาวสุภาพร สุขสุมิตร",
         number: "37",
         grade: "ม.6/9",
